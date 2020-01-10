@@ -1,24 +1,43 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
+// const Bold = ({ children }) => <span className="bold">{children}</span>
+// const Text = ({ children }) => <p className="align-center">{children}</p>
+
+// const options = {
+//   renderMark: {
+//     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+//   },
+//   renderNode: {
+//     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+//   },
+// }
+
+// documentToReactComponents(node.bodyRichText.json, options)
+
+
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const hero = get(this, 'props.data.allContentfulHero.edges[0].node.heroCopy.json')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
-
+    console.log(hero);
     return (
+      
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
           <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
+    <h2 className="section-headline">Recent articlesss</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
@@ -42,6 +61,15 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+      }
+    }
+    allContentfulHero {
+      edges {
+        node {
+          heroCopy {
+            json
+          }
+        }
       }
     }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
