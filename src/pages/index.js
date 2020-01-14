@@ -1,35 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import { BLOCKS } from "@contentful/rich-text-types"
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
-// const Bold = ({ children }) => <span className="bold">{children}</span>
-// const Text = ({ children }) => <p className="align-center">{children}</p>
-
-// const options = {
-//   renderMark: {
-//     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-//   },
-//   renderNode: {
-//     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-//   },
-// }
-
-// documentToReactComponents(node.bodyRichText.json, options)
-
-
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const hero = get(this, 'props.data.allContentfulHero.edges[0].node.heroCopy.json')
+    const heroCopy = get(this, 'props.data.allContentfulHero.nodes[0].heroCopy.json')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
-    console.log(hero);
+    console.log(heroCopy);
     return (
       
       <Layout location={this.props.location} >
@@ -37,7 +22,10 @@ class RootIndex extends React.Component {
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
           <div className="wrapper">
-    <h2 className="section-headline">Recent articlesss</h2>
+            <h2 className="section-headline">Recent articlesss</h2>
+
+            {documentToReactComponents(heroCopy)}
+
             <ul className="article-list">
               {posts.map(({ node }) => {
                 return (
@@ -64,11 +52,9 @@ export const pageQuery = graphql`
       }
     }
     allContentfulHero {
-      edges {
-        node {
-          heroCopy {
-            json
-          }
+      nodes {
+        heroCopy {
+          json
         }
       }
     }
