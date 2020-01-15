@@ -14,13 +14,12 @@ class RootIndex extends React.Component {
     const heroCopy = get(this, 'props.data.allContentfulHero.nodes[0].heroCopy.json')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
-    console.log(heroCopy);
     return (
       
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
-          <Hero data={author.node} />
+          <Hero data={heroCopy} />
           <div className="wrapper">
             <h2 className="section-headline">Recent articlesss</h2>
 
