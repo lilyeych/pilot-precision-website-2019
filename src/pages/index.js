@@ -12,6 +12,7 @@ class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const heroCopy = get(this, 'props.data.allContentfulHero.nodes[0].heroCopy.json')
+    const heroImg = get(this, 'props.data.allContentfulHero.nodes[0].heroImage.file.url')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
     return (
@@ -19,11 +20,11 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
-          <Hero data={heroCopy} />
+          <Hero copy={heroCopy} img={heroImg} />
+
           <div className="wrapper">
             <h2 className="section-headline">Recent articlesss</h2>
 
-            {documentToReactComponents(heroCopy)}
 
             <ul className="article-list">
               {posts.map(({ node }) => {
@@ -53,6 +54,21 @@ export const pageQuery = graphql`
     allContentfulHero {
       nodes {
         heroCopy {
+          json
+        }
+        heroImage {
+          file {
+            url
+          }
+        }
+      }
+    }
+    allContentfulAboutUs {
+      nodes {
+        copy1 {
+          json
+        }
+        copy2 {
           json
         }
       }
