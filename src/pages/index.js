@@ -17,6 +17,7 @@ class RootIndex extends React.Component {
     const heroCopy = get(this, 'props.data.allContentfulHero.nodes[0].heroCopy.json')
     const heroImg = get(this, 'props.data.allContentfulHero.nodes[0].heroImage.file.url')
 
+    const aboutHeader = get(this, 'props.data.allContentfulAboutUs.nodes[0].headline')
     const aboutCopy1 = get(this, 'props.data.allContentfulAboutUs.nodes[0].copy1.json')
     const aboutCopy2 = get(this, 'props.data.allContentfulAboutUs.nodes[0].copy2.json')
     const aboutImgs = get(this, 'props.data.allContentfulAboutUs.nodes[0].images')
@@ -31,7 +32,7 @@ class RootIndex extends React.Component {
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Hero copy={heroCopy} img={heroImg} />
-          <About copy1={aboutCopy1} copy2={aboutCopy2}  imgs={aboutImgs}/>
+          <About header={aboutHeader} copy1={aboutCopy1} copy2={aboutCopy2}  imgs={aboutImgs}/>
 
           <div className="wrapper">
             <h2 className="section-headline">Recent articlesss</h2>
@@ -88,6 +89,7 @@ export const pageQuery = graphql`
           }
           id
         }
+        headline
       }
     }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
