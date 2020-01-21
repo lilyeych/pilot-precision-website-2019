@@ -1,17 +1,17 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import styles from './hero.module.css'
 
-export default ({ header, copy1, copy2, imgs }) => {
-  console.log("copy1",copy1);
+const defaultNodeRenderers = {
+  [BLOCKS.UL_LIST]: (node, next) => <ul>{next(node.content)}</ul>
+};
+
+export default ({ header, copy, imgs }) => {
   return (
     <div>
       <h1>{header}</h1>
-      <div>
-        {documentToReactComponents(copy1)}
-      </div>
       <div>
         {imgs.map(({ id, file }) => {
           return (
@@ -20,8 +20,9 @@ export default ({ header, copy1, copy2, imgs }) => {
         })}
       </div>
       <div>
-        {documentToReactComponents(copy2)}
+        {documentToReactComponents(copy, defaultNodeRenderers)}
       </div>
+      
     </div>
   );
 }

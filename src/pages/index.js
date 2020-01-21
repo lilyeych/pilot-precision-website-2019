@@ -7,6 +7,7 @@ import Helmet from 'react-helmet'
 
 import Hero from '../components/hero'
 import About from '../components/about'
+import Equipment from '../components/equipment'
 
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
@@ -22,17 +23,21 @@ class RootIndex extends React.Component {
     const aboutCopy2 = get(this, 'props.data.allContentfulAboutUs.nodes[0].copy2.json')
     const aboutImgs = get(this, 'props.data.allContentfulAboutUs.nodes[0].images')
 
+    const equipHeader = get(this, 'props.data.allContentfulEquipmentAndCapabilities.nodes[0].headline')
+    const equipCopy = get(this, 'props.data.allContentfulEquipmentAndCapabilities.nodes[0].copy.json')
+    const equipImgs = get(this, 'props.data.allContentfulEquipmentAndCapabilities.nodes[0].images')
+
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
-    console.log("aboutImgs",aboutImgs);
     return (
-      
       <Layout location={this.props.location} >
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
+
           <Hero copy={heroCopy} img={heroImg} />
           <About header={aboutHeader} copy1={aboutCopy1} copy2={aboutCopy2}  imgs={aboutImgs}/>
+          <Equipment header={equipHeader} copy={equipCopy} imgs={equipImgs}/>
 
           <div className="wrapper">
             <h2 className="section-headline">Recent articlesss</h2>
@@ -92,6 +97,22 @@ export const pageQuery = graphql`
         headline
       }
     }
+
+    allContentfulEquipmentAndCapabilities {
+      nodes {
+        images {
+          id
+          file {
+            url
+          }
+        }
+        copy {
+          json
+        }
+        headline
+      }
+    }
+
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
