@@ -133,6 +133,28 @@ export const pageQuery = graphql`
       }
     }
 
+    allContentfulContact {
+      nodes {
+        headline
+        contactMap {
+          file {
+            url
+          }
+        }
+        contact1Email
+        contact1Title
+        contact1Name
+        contact1PhoneNumber
+        contact2Name
+        contact2Title
+        contact2Email
+        contact2PhoneNumber
+        address
+        website
+        copyRight
+      }
+    }
+
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
