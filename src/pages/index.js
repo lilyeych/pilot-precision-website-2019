@@ -9,6 +9,7 @@ import Hero from '../components/hero'
 import About from '../components/about'
 import Equipment from '../components/equipment'
 import Applications from '../components/applications'
+import Contact from '../components/contact'
 
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
@@ -32,6 +33,8 @@ class RootIndex extends React.Component {
     const appCopy = get(this, 'props.data.allContentfulApplications.nodes[0].copy.json')
     const appImg = get(this, 'props.data.allContentfulApplications.nodes[0].images.file.url')
 
+    const contact = get(this, 'props.data.allContentfulContact.nodes[0]')
+
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const [author] = get(this, 'props.data.allContentfulPerson.edges')
 
@@ -44,6 +47,7 @@ class RootIndex extends React.Component {
           <About header={aboutHeader} copy1={aboutCopy1} copy2={aboutCopy2}  imgs={aboutImgs}/>
           <Equipment header={equipHeader} copy={equipCopy} imgs={equipImgs}/>
           <Applications header={appHeader} copy={appCopy} img={appImg}/>
+          <Contact data={contact} />
 
           <div className="wrapper">
             <h2 className="section-headline">Recent articlesss</h2>
