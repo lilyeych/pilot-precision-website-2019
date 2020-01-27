@@ -8,16 +8,15 @@ const defaultNodeRenderers = {
   [BLOCKS.UL_LIST]: (node, next) => <ul>{next(node.content)}</ul>
 };
 
-export default ({ header, copy, img }) => {
-  console.log(img);
+export default ({ data }) => {
   return (
     <div>
-      <h1>{header}</h1>
+      <h1>{data.headline}</h1>
       <div>
-          <img src={img} alt="" />
+          <img src={data.images.file.url} alt="" />
       </div>
       <div>
-        {documentToReactComponents(copy, defaultNodeRenderers)}
+        {documentToReactComponents(data.copy.json, defaultNodeRenderers)}
       </div>
       
     </div>
