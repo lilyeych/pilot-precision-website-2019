@@ -1,30 +1,31 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styles from './navigation.module.css'
+import styles from './styles/navigation.module.scss'
+import logoImg from '../images/logo.svg';
+import instagram from '../images/instagram.png';
 
 export default () => (
-  <nav role="navigation">
-    <ul className={styles.navigation}>
-      <li className={styles.navigationItem}>
-        <Link to="/">Home</Link>
+  <nav role="navigation" className={styles.navigation}>
+    <ul className="container">
+      <li className={styles.navigationItem, styles.logo}>
+        <img src={logoImg} alt="Pilot Precision Logo" />
       </li>
       <li className={styles.navigationItem}>
-        <Link to="/blog/">About</Link>
+        <Link to="#about">About</Link>
       </li>
       <li className={styles.navigationItem}>
-        <Link to="/blog/">Background</Link>
+        <Link to="#equipment">Equipment and Capabilities</Link>
       </li>
       <li className={styles.navigationItem}>
-        <Link to="/blog/">equipment and capabilities</Link>
+        <Link to="#application">Applications</Link>
       </li>
       <li className={styles.navigationItem}>
-        <Link to="/blog/">Applications</Link>
+        <Link to="#contact">Contact</Link>
       </li>
-      <li className={styles.navigationItem}>
-        <Link to="/blog/">Contact</Link>
-      </li>
-      <li className={styles.navigationItem}>
-        <Link to="/blog/">Instagram</Link>
+      <li className={styles.navigationItem, styles.iconInsta}>
+        <Link to="/blog/">
+          <img src={instagram} alt="Instagram icon" />
+        </Link>
       </li>
     </ul>
   </nav>

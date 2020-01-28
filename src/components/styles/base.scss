@@ -1,17 +1,13 @@
-@font-face {
-  font-family: "Avenir";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import 'colors';
+@import 'variables';
 
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #373F49;
-  background: #eee;
+  color: #0d4369;
+  background: #e0e0e0;
   margin: 0;
 }
 
@@ -69,4 +65,10 @@ a {
 
 .list-inline li {
   display: inline-block;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
 }

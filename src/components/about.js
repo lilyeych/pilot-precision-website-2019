@@ -1,11 +1,10 @@
 import React from 'react'
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
-import styles from './hero.module.css'
 
 export default ({ data }) => {
   return (
-    <div>
+    <div id="about">
       <h1>{data.headline}</h1>
       <div>
         {documentToReactComponents(data.copy1.json)}

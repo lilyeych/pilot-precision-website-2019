@@ -18,10 +18,11 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Pilot Precision',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
+    `gatsby-plugin-sass`,
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
