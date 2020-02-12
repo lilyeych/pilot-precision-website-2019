@@ -6,7 +6,7 @@ import styles from './styles/hero.module.scss'
 
 export default ({ data }) => {
   return (
-    <div className={styles.hero} style={{ backgroundImage: `url(${data.heroImage.file.url})` }}>
+    <div className={`section-deco ${styles.hero}`} style={{ backgroundImage: `url(${data.heroImage.file.url})` }}>
       <Navigation />
       <div className="container">
         {documentToReactComponents(data.heroCopy.json)}

@@ -1,1 +1,5 @@
+$spacer: 50px;
 
+@mixin spacer {
+  margin-bottom: $spacer;
+}

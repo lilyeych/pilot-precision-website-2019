@@ -4,7 +4,7 @@
   height: 20vh;
   max-height: 100px;
   padding: 10px 0;
-  background-image: linear-gradient(rgba($corp-light,0.4), rgba($white, 0));
+  background-image: linear-gradient(rgba($corp-light, 0.4), rgba($white, 0));
   font-size: 1.25em;
 }
 
@@ -13,6 +13,14 @@
   padding: 0;
   display: flex;
   justify-content: center;
+
+  li {
+    &:before {
+      content: '';
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 }
 
 .navigationItem {
@@ -30,6 +38,7 @@
 }
 
 .navigationItem a {
+
   &:active,
   &:hover {
     text-decoration: underline;

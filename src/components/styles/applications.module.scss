@@ -1,0 +1,13 @@
+@import 'colors';
+@import 'variables';
+
+.applications {
+  padding: $spacer 0;
+  background-color: $black;
+  background: linear-gradient(315deg, rgba(13, 67, 105, 1) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1) 75%, rgba(13, 67, 105, 1) 100%);
+  color: $white;
+
+  ul {
+    color: $corp-light;
+  }
+}

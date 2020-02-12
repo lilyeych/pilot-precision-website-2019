@@ -9,22 +9,22 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;
+
+  p {
+    padding: 40px 0;
+    margin-bottom: 100%;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  u {
+    text-decoration-color: $corp-light;
+  }
 }
 
-p {
-  padding: 40px 0;
-  margin-bottom: 100%;
-  font-size: 18px;
-  line-height: 32px;
-}
-
-u {
-  text-decoration-color: $corp-light;
-}
 
 
 
 
-@media(min-width: 600px) {
-}
 
+@media(min-width: 600px) {}

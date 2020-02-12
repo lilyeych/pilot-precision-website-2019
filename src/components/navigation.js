@@ -17,7 +17,7 @@ export default () => (
         <Link to="#equipment">Equipment and Capabilities</Link>
       </li>
       <li className={styles.navigationItem}>
-        <Link to="#application">Applications</Link>
+        <Link to="#applications">Applications</Link>
       </li>
       <li className={styles.navigationItem}>
         <Link to="#contact">Contact</Link>

@@ -1,0 +1,16 @@
+@import 'colors';
+@import 'variables';
+
+.about {
+  padding: $spacer 0;
+  background-color: $corp;
+  background: linear-gradient(315deg, rgba(5, 33, 61, 1) 0%, rgba(13, 67, 105, 1) 30%);
+
+  h1 {
+    color: $white;
+  }
+
+  p {
+    color: $corp-light;
+  }
+}
