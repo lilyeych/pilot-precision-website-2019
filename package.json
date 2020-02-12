@@ -10,6 +10,7 @@
     "@contentful/rich-text-html-renderer": "^13.4.0",
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@contentful/rich-text-types": "^13.4.0",
+    "bootstrap": "^4.4.1",
     "contentful": "^7.13.0",
     "gatsby-image": "^2.0.38",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -22,6 +23,7 @@
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "sharp": "^0.22.0"
