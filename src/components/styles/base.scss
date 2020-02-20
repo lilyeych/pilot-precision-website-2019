@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900&display=swap');
 @import 'colors';
 @import 'variables';
 
@@ -14,8 +14,8 @@ body {
   font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.65;
-  color: #0d4369;
-  background: #e0e0e0;
+  color: $corp;
+  background: $white;
   margin: 0;
 }
 

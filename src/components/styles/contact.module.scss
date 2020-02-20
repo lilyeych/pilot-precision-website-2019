@@ -4,3 +4,70 @@
 .contact {
   padding: $spacer 0;
 }
+
+.contactForm {
+  margin-top: 40px;
+
+  label,
+  input,
+  textarea {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  label {
+    width: 10%;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+    padding: 0;
+    border: none;
+  }
+
+  textarea {
+    min-height: calc(1.5em + .75rem + 2px);
+  }
+
+  .formRow {
+    border-top: 1px solid $corp;
+
+    &:last-of-type {
+      border-bottom: 1px solid $corp;
+    }
+  }
+
+  .formMessege {
+    display: inline-block;
+    width: calc(100% - 75px);
+  }
+
+  .submitBtn {
+    width: 75px;
+    background-color: transparent;
+    color: $corp;
+    border: none;
+
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+}
+
+.contacts {
+  background-color: $corp-muted;
+  color: $corp;
+}
+
+.footer {
+  padding: 10px;
+  background-color: $black;
+  color: $corp;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
