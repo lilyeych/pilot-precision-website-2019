@@ -5,8 +5,8 @@ import styles from './styles/about.module.scss'
 
 export default ({ data }) => {
   return (
-    <div id="about" className={`section-deco ${styles.about}`}>
-      <div className="container">
+    <div id="about" className={`section-deco container ${styles.about}`}>
+      <div className="content">
         <h1 class="headline">{data.headline}</h1>
         <div>
           {documentToReactComponents(data.copy1.json)}

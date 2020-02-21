@@ -1,9 +1,8 @@
 @import 'colors';
+@import 'variables';
 
 .hero {
-  position: relative;
-  height: 115vh;
-  min-height: 100%;
+  padding-bottom: $spacer;
   color: $black;
   text-transform: uppercase;
   background-size: cover;
@@ -11,8 +10,8 @@
   background-position: bottom center;
 
   p {
-    padding: 40px 0;
-    margin-bottom: 100%;
+    padding-top: $spacer;
+    margin-bottom: 75vh;
     font-size: 18px;
     line-height: 32px;
   }

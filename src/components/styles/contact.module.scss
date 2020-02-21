@@ -17,6 +17,7 @@
 
   label {
     width: 10%;
+    @include small-font;
   }
 
   input,
@@ -24,6 +25,7 @@
     width: 90%;
     padding: 0;
     border: none;
+    @include small-font;
   }
 
   textarea {
@@ -49,7 +51,7 @@
     color: $corp;
     border: none;
 
-    font-size: 12px;
+    @include small-font;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -59,15 +61,52 @@
 .contacts {
   background-color: $corp-muted;
   color: $corp;
+  text-transform: uppercase;
+
+  .contact {
+    grid-column: span 4;
+
+    &:first-child {
+      grid-column: 2 / span 4;
+    }
+  }
+
+  .name,
+  .title,
+  .website {
+    font-weight: 700;
+  }
+
+  .name,
+  .website {
+    color: $white;
+  }
+
+
+
+  p {
+    @include small-font;
+    margin: 0;
+
+  }
+
+  hr {
+    width: 50px;
+    margin: 4px 0;
+    border: none;
+    border-top: 1px solid $corp;
+  }
 }
 
 .footer {
-  padding: 10px;
+  padding: 20px;
   background-color: $black;
   color: $corp;
   text-align: center;
+  text-transform: uppercase;
 
   p {
+    @include small-font;
     margin: 0;
   }
 }

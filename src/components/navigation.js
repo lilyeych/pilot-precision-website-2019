@@ -23,7 +23,7 @@ export default () => (
         </li>
         <li className={`${styles.iconInsta}`}>
           <Link to="/blog/">
-            <img src={instagram} alt="Instagram icon" />
+            <img src={instagram} alt="Instagram icon" width="22" height="22" />
           </Link>
         </li>
       </ul>

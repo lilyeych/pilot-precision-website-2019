@@ -6,13 +6,13 @@
 
   &> nav {
     display: flex;
+    justify-content: space-between;
     max-height: 100px;
     grid-column: 1 / -2;
     padding: 10px 0;
   }
 
   ul {
-    width: 100%;
     list-style: none;
     padding: 0;
     display: flex;
@@ -21,12 +21,18 @@
     li {
       display: inline-flex;
       align-items: center;
-      margin: 0 1em;
+
+      &:first-child {
+        &:before {
+          display: none;
+        }
+      }
   
       &:before {
         content: '';
-        margin-left: 0;
-        margin-right: 0;
+        height: 12px;
+        margin: 0 1em;
+        border-left: 1px solid $corp;
       }
       
       a {
@@ -38,7 +44,8 @@
   
         &:active,
         &:hover {
-          text-decoration: underline;
+          text-decoration: none;
+          font-weight: 700;
         }
       }
     }
@@ -53,6 +60,8 @@
 }
 
 .iconInsta {
-  width: 22px;
-  height: auto;
+  img {
+    width: 22px;
+    height: auto;
+  }
 }

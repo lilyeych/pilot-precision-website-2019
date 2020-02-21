@@ -4,9 +4,15 @@ $spacer: 50px;
   margin-bottom: $spacer;
 }
 
-$container-width: 850px;
-
 $small: 576px;
 $medium: 768px;
 $large: 992px;
 $xlarge: 1200px;
+
+$gutter: 8px;
+$container-width: $medium;
+
+@mixin small-font {
+  font-size: .8em;
+  line-height: 1.25;
+}

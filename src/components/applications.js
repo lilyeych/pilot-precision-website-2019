@@ -10,8 +10,8 @@ const defaultNodeRenderers = {
 
 export default ({ data }) => {
   return (
-    <div id="applications" className={`section-deco ${styles.applications}`}>
-      <div className="container">
+    <div id="applications" className={`section-deco container ${styles.applications}`}>
+      <div className="content">
         <h1 class="headline">{data.headline}</h1>
         <div>
           {documentToReactComponents(data.copy.json, defaultNodeRenderers)}

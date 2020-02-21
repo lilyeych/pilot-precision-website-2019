@@ -10,9 +10,9 @@ const defaultNodeRenderers = {
 
 export default ({ data }) => {
   return (
-    <div id="equipment" className={`section-deco ${styles.equipment}`}>
-      <div class="container">
-      <h1 class="headline">{data.headline}</h1>
+    <div id="equipment" className={`section-deco container ${styles.equipment}`}>
+      <div class="content">
+        <h1 class="headline">{data.headline}</h1>
         <div className="img-container">
           {data.images.map(({ id, file }) => {
             return (

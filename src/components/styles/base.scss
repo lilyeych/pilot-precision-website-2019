@@ -73,11 +73,15 @@ ul {
   width: 100%;
   display: grid;
   grid-template-columns: 10px auto 10px;
-  grid-gap: 8px;
+  grid-gap: $gutter;
 
   @media(min-width: $large) {
-    grid-template-columns: auto repeat(13, minmax(min-content, $container-width/12)) auto;
+    grid-template-columns: auto repeat(12, minmax(min-content, ($container-width - ($gutter * 12))/12)) auto;
   }
+}
+
+.content {
+  grid-column: 2 / -2;
 }
 
 .img-container {
@@ -99,6 +103,7 @@ ul {
   &:after {
     content: url('../../images/arrow.svg');
     display: block;
+    grid-column: 2 / -2;
     text-align: center;
   }
 }

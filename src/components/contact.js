@@ -7,8 +7,8 @@ import styles from './styles/contact.module.scss'
 export default ({ data }) => {
   return (
     <div>
-      <div id="contact" className={`section-deco ${styles.contact}`}>
-        <div className="container">
+      <div id="contact" className={`section-deco container ${styles.contact}`}>
+        <div className="content">
           <h1 class="headline">{data.headline}</h1>
           <div>
             <img src={data.contactMap.file.url} alt="" />
@@ -40,17 +40,28 @@ export default ({ data }) => {
       </div>
       <div className={styles.contacts}>
         <div className="container">
+          <div className={styles.contact}>
+            <p className={styles.name}>{data.contact1Name}</p>
+            <p className={styles.title}>{data.contact1Title}</p>
+            <hr />
             <p>{data.contact1Email}</p>
-            <p>{data.contact1Name}</p>
             <p>{data.contact1PhoneNumber}</p>
-            <p>{data.contact2Name}</p>
-            <p>{data.contact2Title}</p>
+          </div>
+
+          <div className={styles.contact}>
+            <p className={styles.name}>{data.contact2Name}</p>
+            <p className={styles.title}>{data.contact2Title}</p>
+            <hr />
             <p>{data.contact2Email}</p>
             <p>{data.contact2PhoneNumber}</p>
-            <p>{data.address}</p>
-            <p>{data.website}</p>
-            
           </div>
+
+          <div className={styles.contact}>
+            <p>{data.address}</p>
+            <hr />
+            <p className={styles.website}>{data.website}</p>
+          </div>
+        </div>
       </div>
       <div className={styles.footer}>
         <p>{data.copyRight}</p>
