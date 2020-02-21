@@ -4,7 +4,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Hero from '../components/hero'
 import About from '../components/about'

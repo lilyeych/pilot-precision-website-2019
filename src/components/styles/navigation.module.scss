@@ -1,53 +1,55 @@
 @import 'colors';
 
 .navigation {
-  height: 20vh;
-  max-height: 100px;
-  padding: 10px 0;
   background-image: linear-gradient(rgba($corp-light, 0.4), rgba($white, 0));
   font-size: 1.25em;
-}
 
-.navigation ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
+  &> nav {
+    display: flex;
+    max-height: 100px;
+    grid-column: 1 / -2;
+    padding: 10px 0;
+  }
 
-  li {
-    &:before {
-      content: '';
-      margin-left: 0;
-      margin-right: 0;
+  ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+  
+    li {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 1em;
+  
+      &:before {
+        content: '';
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      a {
+        color: $corp;
+        font-size: 12px;
+        text-decoration: none;
+        font-weight: normal;
+        text-transform: uppercase;
+  
+        &:active,
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
 
-.navigationItem {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 1em;
-}
-
-.navigationItem a {
-  color: $corp;
-  font-size: 12px;
-  text-decoration: none;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
-.navigationItem a {
-
-  &:active,
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 .logo {
+  display: inline-block;
   width: 276px;
   height: auto;
+  margin: 0 10px;
 }
 
 .iconInsta {

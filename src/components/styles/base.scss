@@ -71,8 +71,13 @@ ul {
 
 .container {
   width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 10px auto 10px;
+  grid-gap: 8px;
+
+  @media(min-width: $large) {
+    grid-template-columns: auto repeat(13, minmax(min-content, $container-width/12)) auto;
+  }
 }
 
 .img-container {
