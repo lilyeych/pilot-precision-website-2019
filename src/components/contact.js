@@ -8,7 +8,7 @@ export default ({ data }) => {
   return (
     <div>
       <div id="contact" className={`section-deco container ${styles.contact}`}>
-        <div className="content">
+        <div>
           <h1 class="headline">{data.headline}</h1>
           <div>
             <img src={data.contactMap.file.url} alt="" />

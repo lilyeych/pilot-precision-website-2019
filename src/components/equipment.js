@@ -11,18 +11,16 @@ const defaultNodeRenderers = {
 export default ({ data }) => {
   return (
     <div id="equipment" className={`section-deco container ${styles.equipment}`}>
-      <div class="content">
-        <h1 class="headline">{data.headline}</h1>
-        <div className="img-container">
-          {data.images.map(({ id, file }) => {
-            return (
-              <img key={id} src={file.url} alt="" />
-            )
-          })}
-        </div>
-        <div>
-          {documentToReactComponents(data.copy.json, defaultNodeRenderers)}
-        </div>
+      <h1 class="headline">{data.headline}</h1>
+      <div className="img-container">
+        {data.images.map(({ id, file }) => {
+          return (
+            <img key={id} src={file.url} alt="" />
+          )
+        })}
+      </div>
+      <div>
+        {documentToReactComponents(data.copy.json, defaultNodeRenderers)}
       </div>
     </div>
   );

@@ -78,10 +78,10 @@ ul {
   @media(min-width: $large) {
     grid-template-columns: auto repeat(12, minmax(min-content, ($container-width - ($gutter * 12))/12)) auto;
   }
-}
 
-.content {
-  grid-column: 2 / -2;
+  & > * {
+    grid-column: 2 / -2;
+  }
 }
 
 .img-container {
