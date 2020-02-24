@@ -10,4 +10,17 @@
   ul {
     color: $corp-light;
   }
+
+  .content,
+  .img {
+    padding-bottom: $spacer;
+  }
+
+  .content {
+    grid-column: 2 / span 6;
+  }
+
+  .img {
+    grid-column:span 6;
+  }
 }

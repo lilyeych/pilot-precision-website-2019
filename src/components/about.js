@@ -10,13 +10,11 @@ export default ({ data }) => {
       <div>
         {documentToReactComponents(data.copy1.json)}
       </div>
-      <div className="img-container">
-        {data.images.map(({ id, file }) => {
-          return (
-            <img key={id} src={file.url} alt="" />
-          )
-        })}
-      </div>
+      {data.images.map(({ id, file }) => {
+        return (
+          <img key={id} src={file.url} alt="" />
+        )
+      })}
       <div>
         {documentToReactComponents(data.copy2.json)}
       </div>

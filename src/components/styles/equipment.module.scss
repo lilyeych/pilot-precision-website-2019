@@ -4,4 +4,13 @@
 .equipment {
   padding: $spacer 0;
   background-color: $grey;
+
+  img {
+    grid-column: span 6;
+    padding-bottom: $spacer;
+
+    &:first-of-type {
+      grid-column: 2 / span 6;
+    }
+  }
 }

@@ -12,13 +12,11 @@ export default ({ data }) => {
   return (
     <div id="equipment" className={`section-deco container ${styles.equipment}`}>
       <h1 class="headline">{data.headline}</h1>
-      <div className="img-container">
-        {data.images.map(({ id, file }) => {
-          return (
-            <img key={id} src={file.url} alt="" />
-          )
-        })}
-      </div>
+      {data.images.map(({ id, file }) => {
+        return (
+          <img key={id} src={file.url} alt="" />
+        )
+      })}
       <div>
         {documentToReactComponents(data.copy.json, defaultNodeRenderers)}
       </div>

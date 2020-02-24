@@ -12,10 +12,10 @@ export default ({ data }) => {
   return (
     <div id="applications" className={`section-deco container ${styles.applications}`}>
       <h1 class="headline">{data.headline}</h1>
-      <div>
+      <div class={styles.content}>
         {documentToReactComponents(data.copy.json, defaultNodeRenderers)}
       </div>
-      <div>
+      <div class={styles.img}>
           <img src={data.images.file.url} alt="" />
       </div>
     </div>
