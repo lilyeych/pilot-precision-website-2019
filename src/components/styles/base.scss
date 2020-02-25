@@ -22,6 +22,7 @@ body {
 img {
   display: block;
   width: 100%;
+  max-width: 100%;
 }
 
 h1,
@@ -72,10 +73,10 @@ ul {
 .container {
   width: 100%;
   display: grid;
-  grid-template-columns: 10px auto 10px;
+  grid-template-columns: 10px repeat(12, minmax(min-content, ($container-width - ($gutter * 12))/12)) 10px;
   grid-gap: $gutter;
 
-  @media(min-width: $large) {
+  @media(min-width: $small) {
     grid-template-columns: auto repeat(12, minmax(min-content, ($container-width - ($gutter * 12))/12)) auto;
   }
 

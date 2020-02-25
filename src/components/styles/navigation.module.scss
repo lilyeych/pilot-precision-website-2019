@@ -1,39 +1,71 @@
 @import 'colors';
+@import 'variables';
 
 .navigation {
   background-image: linear-gradient(rgba($corp-light, 0.4), rgba($white, 0));
   font-size: 1.25em;
 
   &> nav {
-    display: flex;
-    justify-content: space-between;
-    max-height: 100px;
-    grid-column: 1 / -2;
     padding: 10px 0;
+
+    @media(min-width: $large) {
+      display: flex;
+      justify-content: space-between;
+      max-height: 100px;
+      grid-column: 1 / -2;
+    }
+  }
+
+  .navToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    @media(min-width: $large) {
+      display: none;
+    }
   }
 
   ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: flex-end;
+    @media(min-width: $large) {
+      display: flex;
+      justify-content: flex-end;
+    }
   
     li {
-      display: inline-flex;
+      display: flex;
       align-items: center;
+      padding: 10px;
+
+      @media(min-width: $large) {
+        display: inline-flex;
+        padding: 0 10px;
+      }
 
       &:first-child {
         &:before {
           display: none;
         }
       }
-  
+      
       &:before {
-        content: '';
-        height: 12px;
-        margin: 0 1em;
-        border-left: 1px solid $corp;
+        display: none;
+
+        @media(min-width: $large) {
+          content: '';
+          display: inline-block;
+          height: 12px;
+          margin: 0 1em;
+          border-left: 1px solid $corp;
+        }
       }
+      
       
       a {
         color: $corp;
@@ -54,9 +86,13 @@
 
 .logo {
   display: inline-block;
-  width: 276px;
+  width: 200px;
   height: auto;
   margin: 0 10px;
+
+  @media(min-width: $large) {
+    width: 276px;
+  }
 }
 
 .iconInsta {

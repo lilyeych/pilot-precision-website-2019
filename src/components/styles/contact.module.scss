@@ -20,6 +20,10 @@
     @include small-font;
   }
 
+  input {
+    height: calc(1.5em + .75rem + 2px);
+  }
+
   input,
   textarea {
     width: 90%;
@@ -59,17 +63,26 @@
 }
 
 .contacts {
+  padding: $spacer/2 0;
   background-color: $corp-muted;
   color: $corp;
   text-transform: uppercase;
 
-  .contact {
-    grid-column: span 4;
+  .contactItem {
+    padding: $spacer/3 0;
+    grid-column: 2 / -2;
 
-    &:first-child {
-      grid-column: 2 / span 4;
+    @media(min-width: $medium) {
+      padding: $spacer/2 0;
+      grid-column: span 4;
+  
+      &:first-child {
+        grid-column: 2 / span 4;
+      }
     }
   }
+
+  
 
   .name,
   .title,

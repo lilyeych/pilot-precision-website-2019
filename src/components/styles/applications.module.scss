@@ -16,11 +16,18 @@
     padding-bottom: $spacer;
   }
 
+  .img,
   .content {
-    grid-column: 2 / span 6;
+    grid-column: 2 / -2;
   }
 
-  .img {
-    grid-column:span 6;
+  @media(min-width: $small) {
+    .content {
+      grid-column: 2 / span 6;
+    }
+  
+    .img {
+      grid-column:span 6;
+    }
   }
 }
