@@ -16,8 +16,12 @@
   }
 
   label {
-    width: 10%;
+    width: 100%;
     @include small-font;
+
+    @media(min-width: $small) {
+      width: 10%;
+    }
   }
 
   input {
@@ -26,10 +30,14 @@
 
   input,
   textarea {
-    width: 90%;
+    width: 100%;
     padding: 0;
     border: none;
     @include small-font;
+
+    @media(min-width: $small) {
+      width: 90%;
+    }
   }
 
   textarea {
@@ -75,14 +83,14 @@
     @media(min-width: $medium) {
       padding: $spacer/2 0;
       grid-column: span 4;
-  
+
       &:first-child {
         grid-column: 2 / span 4;
       }
     }
   }
 
-  
+
 
   .name,
   .title,
