@@ -118,11 +118,11 @@ export const pageQuery = graphql`
         contact1Email
         contact1Title
         contact1Name
-        contact1PhoneNumber
         contact2Name
         contact2Title
         contact2Email
-        contact2PhoneNumber
+        contact3PhoneNumber
+        contact3Email
         address
         website
         copyRight

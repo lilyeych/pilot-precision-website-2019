@@ -7,10 +7,10 @@ import styles from './styles/contact.module.scss'
 export default class contact extends React.Component {
   constructor(props){
     super(props);
-  }
-
-  submitForm() {
-    console.log(props);
+    this.submitForm = this.submitForm.bind(this);
+    this.state = {
+      status: ""
+    };
   }
 
   render() {
@@ -23,7 +23,7 @@ export default class contact extends React.Component {
               <img src={this.props.data.contactMap.file.url} alt="" />
             </div>
               
-            <form className={styles.contactForm} action="mailto:varun@kisaandietech.com" method="post" enctype="text/plain">
+            <form className={styles.contactForm} onSubmit={this.submitForm} action="https://formspree.io/mdozqrbp" method="POST" enctype="text/plain">
               <div className={styles.formRow}>
                 <label for="validationDefault01">Name:</label>
                 <input type="text" name="Name" className="form-control" id="validationDefault01" required></input>
@@ -42,8 +42,11 @@ export default class contact extends React.Component {
                   <textarea rows="1" name="Message" className="form-control" id="validationDefault04" required></textarea>
                 </div>
   
+                
                 <button className={`btn btn-primary ${styles.submitBtn}`} type="submit">Submit</button>
               </div>
+              {this.state.status === "SUCCESS" && <p>Thanks!</p>}
+              {this.state.status === "ERROR" && <p>Ooops! There was an error.</p>}
             </form>
           </div>
         </div>
@@ -66,6 +69,8 @@ export default class contact extends React.Component {
             </div>
   
             <div className={styles.contactItem}>
+              <p>{this.props.data.contact3Email}</p>
+              <p>{this.props.data.contact3PhoneNumber}</p>
               <p>{this.props.data.address}</p>
               <hr />
               <p className={styles.website}>{this.props.data.website}</p>
@@ -78,4 +83,24 @@ export default class contact extends React.Component {
       </div>
     )
   }
+
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS" });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
 }
+
