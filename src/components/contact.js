@@ -23,7 +23,7 @@ export default class contact extends React.Component {
               <img src={this.props.data.contactMap.file.url} alt="" />
             </div>
               
-            <form className={styles.contactForm} onSubmit={this.submitForm} action="https://formspree.io/mdozqrbp" method="POST" enctype="text/plain">
+            <form className={styles.contactForm} onSubmit={this.submitForm} action="https://formspree.io/xqklewro" method="POST" enctype="text/plain">
               <div className={styles.formRow}>
                 <label for="validationDefault01">Name:</label>
                 <input type="text" name="Name" className="form-control" id="validationDefault01" required></input>
@@ -69,9 +69,9 @@ export default class contact extends React.Component {
             </div>
   
             <div className={styles.contactItem}>
+              <p>{this.props.data.address}</p>
               <p>{this.props.data.contact3Email}</p>
               <p>{this.props.data.contact3PhoneNumber}</p>
-              <p>{this.props.data.address}</p>
               <hr />
               <p className={styles.website}>{this.props.data.website}</p>
             </div>
