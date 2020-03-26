@@ -56,21 +56,19 @@ export default class contact extends React.Component {
               <p className={styles.name}>{this.props.data.contact1Name}</p>
               <p className={styles.title}>{this.props.data.contact1Title}</p>
               <hr />
-              <p>{this.props.data.contact1Email}</p>
-              <p>{this.props.data.contact1PhoneNumber}</p>
+              <p><a href={`mailto:${this.props.data.contact1Email}`} style={{textDecoration: 'none'}}>{this.props.data.contact1Email}</a></p>
             </div>
   
             <div className={styles.contactItem}>
               <p className={styles.name}>{this.props.data.contact2Name}</p>
               <p className={styles.title}>{this.props.data.contact2Title}</p>
               <hr />
-              <p>{this.props.data.contact2Email}</p>
-              <p>{this.props.data.contact2PhoneNumber}</p>
+              <p><a href={`mailto:${this.props.data.contact2Email}`} style={{textDecoration: 'none'}}>{this.props.data.contact2Email}</a></p>
             </div>
   
             <div className={styles.contactItem}>
               <p>{this.props.data.address}</p>
-              <p>{this.props.data.contact3Email}</p>
+              <p><a href={`mailto:${this.props.data.contact3Email}`} style={{textDecoration: 'none'}}>{this.props.data.contact3Email}</a></p>
               <p>{this.props.data.contact3PhoneNumber}</p>
               <hr />
               <p className={styles.website}>{this.props.data.website}</p>
