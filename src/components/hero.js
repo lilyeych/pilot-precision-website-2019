@@ -9,8 +9,10 @@ export default ({ data }) => {
     <div className={`section-deco ${styles.hero}`} style={{ backgroundImage: `url(${data.heroImage.file.url})` }}>
       <Navigation />
       <div className="container">
-        <div className="content">
-          {documentToReactComponents(data.heroCopy.json)}
+        <div className={`content ${styles.heroBox}`}>
+          <div>
+            {documentToReactComponents(data.heroCopy.json)}
+          </div>
         </div>
       </div>
     </div>

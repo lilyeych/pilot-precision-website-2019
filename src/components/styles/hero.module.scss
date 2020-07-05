@@ -2,18 +2,44 @@
 @import 'variables';
 
 .hero {
-  padding-bottom: $spacer;
+  height: 100vh;
   color: $black;
   text-transform: uppercase;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;
 
+  &:after {
+    margin-top: -50px;
+  }
+
+  .heroBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / span 7;
+    height: calc(100vh - 100px);
+
+    @media(min-width: $small) {
+      height: calc(100vh - 120px);
+    }
+
+    >div {
+      padding: 1rem;
+      background-color: rgba($corp, 0.9);
+    }
+  }
+
   p {
-    padding-top: $spacer;
-    margin-bottom: 75vh;
-    font-size: 18px;
-    line-height: 32px;
+    margin-bottom: 0;
+    color: $white;
+    font-size: 14px;
+    line-height: 24px;
+
+    @media(min-width: $small) {
+      font-size: 18px;
+      line-height: 32px;
+    }
   }
 
   u {
