@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styles from './styles/navigation.module.scss'
-import logoImg from '../images/logo.svg';
+import logoImg from '../images/logo-white.svg';
 import instagram from '../images/instagram.png';
 
 export default class navigation extends React.Component {

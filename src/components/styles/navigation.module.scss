@@ -2,7 +2,8 @@
 @import 'variables';
 
 .navigation {
-  background-image: linear-gradient(rgba($corp-light, 0.4), rgba($white, 0));
+  background-color: $black;
+  // background-image: linear-gradient(rgba($corp-light, 0.4), rgba($white, 0));
   font-size: 1.25em;
 
   &> nav {
@@ -12,7 +13,11 @@
       display: flex;
       justify-content: space-between;
       max-height: 100px;
-      grid-column: 1 / -2;
+      grid-column: 2 / -2;
+    }
+
+    button {
+      color: $white;
     }
   }
 
@@ -61,14 +66,14 @@
           content: '';
           display: inline-block;
           height: 12px;
-          margin: 0 1em;
+          margin: 0 0.25em;
           border-left: 1px solid $corp;
         }
       }
       
       
       a {
-        color: $corp;
+        color: $white;
         font-size: 13px;
         text-decoration: none;
         font-weight: normal;
@@ -86,13 +91,9 @@
 
 .logo {
   display: inline-block;
-  width: 200px;
+  width: 170px;
   height: auto;
-  margin: 0 10px;
-
-  @media(min-width: $large) {
-    width: 276px;
-  }
+  margin: 5px 10px;
 }
 
 .iconInsta {
